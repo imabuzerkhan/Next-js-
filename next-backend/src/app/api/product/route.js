@@ -17,6 +17,21 @@ import { NextResponse } from "next/server";
 
 // ** add multiple  data 
 export async function GET(req){
+
+// ** use query
+// const {searchParams} = new URL(req.url)
+const searchParams = req.nextUrl.searchParams
+console.log(searchParams);
+
+console.log(searchParams.get("search"))
+
+// ** cookies 
+const cook1 = req.cookies;
+console.log(cook1)
+
+
+
+
   const data = [
     { id: 1, name: "Mohammad Abuzer Khan", study: "Nepal Business College" },
     { id: 2, name: "John Doe", study: "Harvard University" },
